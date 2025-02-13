@@ -1,0 +1,424 @@
+/* Estilo general */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #4F2026; /* Fondo vino tinto */
+  overflow: hidden; /* Evita el scroll mientras está la carta */
+  cursor: url('heart-cursor.png'), auto; /* Custom heart cursor */
+}
+
+#contenido-web {
+  display: none; /* Oculta el contenido principal hasta que se abra la carta */
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+#contenido-web.mostrar {
+  opacity: 1;
+}
+
+/* Título principal */
+header h1 {
+  background: linear-gradient(45deg, #FFD700, #FF69B4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 3rem;
+  font-family: 'Playfair Display', serif;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra para mayor legibilidad */
+}
+
+/* Subtítulos */
+header p, section h2 {
+  color: #FFB6C1; /* Rosa pastel */
+  font-size: 1.5rem;
+  font-family: 'Playfair Display', serif;
+}
+
+/* Carta */
+.carta {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #e7a38e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  transition: opacity 1s ease-in-out;
+}
+
+/* Flip Card Styles */
+.carta-flip {
+  position: relative;
+  width: 528px;
+  height: 528px;
+  transform-style: preserve-3d;
+  transition: transform 1s ease-in-out;
+}
+
+.carta-imagen, .carta-mensaje {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.carta-imagen {
+  background: url('carta.jpg') no-repeat center/cover;
+  transform: rotateY(0deg);
+}
+
+.carta-mensaje {
+  background: rgba(255, 182, 193, 0.9); /* Rosa pastel semi-transparente */
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px); /* Efecto de desenfoque */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Borde sutil */
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(20px) rotateY(180deg);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.carta-mensaje h2 {
+  font-size: 2rem;
+  color: #4F2026; /* Vino tinto */
+  margin-bottom: 20px;
+  font-family: 'Playfair Display', serif; /* Fuente elegante */
+}
+
+.carta-mensaje p {
+  font-size: 1.2rem;
+  color: #4F2026; /* Vino tinto */
+  line-height: 1.6;
+}
+
+.carta-mensaje button {
+  background-color: #FF69B4; /* Rosa */
+  color: #4F2026; /* Vino tinto */
+  border: none;
+  padding: 12px 24px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 20px;
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.carta-mensaje button:hover {
+  background-color: #FFD700; /* Dorado */
+  transform: scale(1.05); /* Efecto de crecimiento al pasar el mouse */
+}
+
+.carta.flip .carta-flip {
+  transform: rotateY(180deg);
+}
+
+.carta-mensaje.mostrar {
+  opacity: 1;
+  transform: translateY(0) rotateY(180deg);
+}
+
+/* Typing Effect Styles */
+#love-letter {
+  font-family: 'Courier New', monospace;
+  white-space: pre-wrap;
+  overflow: hidden;
+  border-right: 2px solid #FF69B4; /* Rosa */
+  animation: blink-caret 0.75s step-end infinite;
+  color: #F5F5DC; /* Beige claro */
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: #FF69B4; }
+}
+
+/* Timeline Styles */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+}
+
+.event {
+  background-color: rgba(255, 182, 193, 0.9); /* Rosa pastel semi-transparente */
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.event h3 {
+  color: #4F2026; /* Vino tinto */
+}
+
+.event p {
+  color: #4F2026; /* Vino tinto */
+}
+
+/* Carousel Styles */
+.carousel {
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.carousel-inner {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.carousel-prev, .carousel-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 105, 180, 0.8); /* Rosa semi-transparente */
+  color: #4F2026; /* Vino tinto */
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.carousel-prev:hover, .carousel-next:hover {
+  background-color: rgba(255, 215, 0, 0.8); /* Dorado semi-transparente */
+}
+
+/* Heart Animation */
+.corazon {
+  position: fixed; /* Cambiado de absolute a fixed */
+  width: 24px;
+  height: 24px;
+  background-color: #FF69B4; /* Rosa */
+  transform: rotate(-45deg);
+  animation: flotar 3s infinite ease-in-out;
+  opacity: 0.6; /* Hace los corazones semi-transparentes */
+  z-index: -1; /* Envía los corazones al fondo */
+}
+
+.corazon:before,
+.corazon:after {
+  content: '';
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  background-color: #FF69B4; /* Rosa */
+  border-radius: 50%;
+}
+
+.corazon:before {
+  top: -10px;
+  left: 0;
+}
+
+.corazon:after {
+  top: 0;
+  left: 10px;
+}
+
+@keyframes flotar {
+  0%, 100% { transform: translateY(0) rotate(-45deg); }
+  50% { transform: translateY(-20px) rotate(-45deg); }
+}
+
+/* Estilos para el contador de tiempo juntos */
+#contador-tiempo {
+  text-align: center;
+  padding: 20px;
+  background-color: rgba(255, 182, 193, 0.9); /* Rosa pastel semi-transparente */
+  border-radius: 20px;
+  margin: 20px auto;
+  max-width: 600px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+#contador-tiempo h2 {
+  font-size: 2rem;
+  color: #4F2026; /* Vino tinto */
+  margin-bottom: 20px;
+  font-family: 'Playfair Display', serif;
+}
+
+.contador {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.tiempo {
+  background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco semi-transparente */
+  padding: 10px;
+  border-radius: 10px;
+  margin: 10px;
+  width: 100px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.tiempo span {
+  display: block;
+  text-align: center;
+}
+
+.tiempo span:first-child {
+  font-size: 2rem;
+  color: #4F2026; /* Vino tinto */
+  font-weight: bold;
+}
+
+.tiempo span:last-child {
+  font-size: 1rem;
+  color: #4F2026; /* Vino tinto */
+  margin-top: 5px;
+}
+
+/* Estilos para el juego de preguntas y respuestas */
+#juego-san-valentin {
+  text-align: center;
+  padding: 20px;
+  background-color: rgba(255, 182, 193, 0.9); /* Rosa pastel semi-transparente */
+  border-radius: 20px;
+  margin: 20px auto;
+  max-width: 600px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+#preguntas {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+#pregunta-texto {
+  font-size: 1.5rem;
+  color: #4F2026;
+  margin-bottom: 10px;
+}
+
+#respuesta-input {
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #4F2026;
+  width: 80%;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+#siguiente-pregunta, #si-btn, #no-btn {
+  background-color: #FF69B4;
+  color: #4F2026;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+#siguiente-pregunta:hover, #si-btn:hover, #no-btn:hover {
+  background-color: #FFD700;
+  transform: scale(1.05);
+}
+
+#resultado {
+  display: none;
+  text-align: center;
+}
+
+#corazones-container {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.corazon {
+  position: absolute;
+  color: red;
+  font-size: 2rem;
+  animation: flotar 4s linear infinite;
+}
+
+@keyframes flotar {
+  0% { transform: translateY(100vh) scale(0.5); opacity: 1; }
+  100% { transform: translateY(-10vh) scale(1.2); opacity: 0; }
+}
+
+
+.carousel {
+  position: relative;
+  width: 80%;
+  max-width: 600px;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-inner {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+  min-width: 100%;
+}
+
+.carousel-item img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.carousel-prev,
+.carousel-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 18px;
+  border-radius: 5px;
+}
+
+.carousel-prev { left: 10px; }
+.carousel-next { right: 10px; }
+
+.carousel-prev:hover,
+.carousel-next:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+#video-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px; /* Espacio entre los videos */
+  margin-top: 20px;
+}
+
+#video-mio, #video-suyo {
+  width: 150px; /* Ajusta el tamaño según sea necesario */
+  height: auto;
+  border-radius: 15px; /* Esquinas redondeadas */
+}
+
+#video-mio {
+  transform: scaleX(-1); /* Voltear horizontalmente para que parezca un beso */
+}

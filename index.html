@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Libro de Recuerdos</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Floating Hearts -->
+  <div class="corazon" style="top: 6%; left: 66%;"></div>
+  <div class="corazon" style="top: 10%; left: 43%;"></div>
+  <div class="corazon" style="top: 83%; left: 9%;"></div>
+  <div class="corazon" style="top: 94%; left: 17%;"></div>
+  <div class="corazon" style="top: 86%; left: 29%;"></div>
+  <div class="corazon" style="top: 93%; left: 40%;"></div>
+  <div class="corazon" style="top: 90%; left: 70%;"></div>
+  <div class="corazon" style="top: 30%; left: 50%;"></div>
+  <div class="corazon" style="top: 50%; left: 80%;"></div>
+  <div class="corazon" style="top: 10%; left: 10%;"></div>  
+  <div class="corazon" style="top: 20%; left: 80%;"></div>
+  <div class="corazon" style="top: 30%; left: 30%;"></div>
+  <div class="corazon" style="top: 40%; left: 60%;"></div>
+  <div class="corazon" style="top: 50%; left: 20%;"></div>
+  <div class="corazon" style="top: 60%; left: 70%;"></div>
+  <div class="corazon" style="top: 70%; left: 40%;"></div>
+  <div class="corazon" style="top: 80%; left: 90%;"></div>
+  <div class="corazon" style="top: 84%; left: 50%;"></div>
+
+  <!-- Carta inicial -->
+  <div class="carta">
+    <div class="carta-flip">
+      <div class="carta-imagen"></div>
+      <div class="carta-mensaje">
+        <h2>A ti, que te gustan las cartas...</h2>
+        <p>Este es el comienzo de nuestro libro de recuerdos. Un viaje que compartimos juntos, lleno de momentos especiales.</p>
+        <button id="abrir-carta">Abrir carta</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contenido de la página web -->
+  <div id="contenido-web">
+    <header>
+      <h1>Bienvenida a Nuestro Libro de Recuerdos</h1>
+      <p>Un espacio para guardar y revivir nuestros mejores momentos.</p>
+  
+      <!-- Contador de tiempo juntos -->
+      <section id="contador-tiempo">
+        <h2>Nuestro Tiempo Juntos</h2>
+        <div class="contador">
+          <div class="tiempo">
+            <span id="anos">0</span>
+            <span>Años</span>
+          </div>
+          <div class="tiempo">
+            <span id="meses">0</span>
+            <span>Meses</span>
+          </div>
+          <div class="tiempo">
+            <span id="dias">0</span>
+            <span>Días</span>
+          </div>
+          <div class="tiempo">
+            <span id="horas">0</span>
+            <span>Horas</span>
+          </div>
+          <div class="tiempo">
+            <span id="minutos">0</span>
+            <span>Minutos</span>
+          </div>
+          <div class="tiempo">
+            <span id="segundos">0</span>
+            <span>Segundos</span>
+          </div>
+        </div>
+      </section>
+    </header>
+    <main>
+      <!-- Love Letter Section -->
+      <section>
+        <h2>Una Carta Para Ti</h2>
+        <div class="carta-para-ti">
+          <p id="love-letter"></p>
+        </div>
+      </section>
+
+      <!-- Timeline Section -->
+      <section>
+        <h2>Nuestra Historia</h2>
+        <div class="timeline">
+          <div class="event">
+            <h3>1 de Junio del 2021</h3>
+            <p>El día que todo comenzó...</p>
+            <p>Me encontraba aburrido y se me ocurrió meterme en ometv para pasar el rato, empecé a pasar, pasar y pasar personas. Todas eran conversaciones vacías y de repente ¡PUM!</p>
+            <p>Entraste por primera vez en mi vida, tenía frente a mi a una chica risueña, la cuál me haría pasar de los mejores momentos de mi vida, y yo sin saberlo aún casi me voy sin tener forma alguna de contactarla de nuevo. Menos mal que me paraste.</p>
+          </div>
+          <div class="event">
+            <h3>Un verano de amor</h3>
+            <p>Fue en este verano cuando te conocí y me enamoré de ti.</p>
+            <p>Al principio simplemente me divertía junto a ti, primero solo era por mensajes, despues nos fuimos a Discord y no sé en que momento caí rendido a ti.</p>
+            <p>No sé si fueron tus canciones, las historias que leía contigo, escuchar canciones juntos, ver la pasión que le pones a las cosas, ver series contigo, verte reir, escuchar tu risa,tu humor,tu ternura, lo fácil que es hablar contigo, tu inocencia, tu esfuerzo, tu personalidad, tus ojos, mejillas, pecas, labios, pelo, pestañas o que simplemente me aguantaras.</p>
+            <p>Por lógica entiendo que debe ser el pasar tiempo contigo y descubrir como eres. Ese verano siempre tendrá un lugar muy especial dentro de mi.</p>
+          </div>
+          <!-- Add more events -->
+          <div class="event">
+            <h3>Navidad y Año nuevo</h3>
+            <p>No entendía por qué pero me hacía ilusión pasar esas dos fechas junto a ti.</p>
+            <p>En mi mente se quedó clavada una foto tuya con cuernitos, tu versión renito, otra evento fue cuando te quemaste el dia de las velitas ;-;</p>
+            <p>También se me acaba de venir a la cabeza esos momentos donde mi madre vió mi movil una vez que me llamabas y me dijo "¿Quién es 'Diosa griega'?" xd</p>
+            <p>No me acuerdo de como salí de esa, pero me llevé una charlita de tener cuidado con extraños de internet ;-;</p>
+          </div>
+
+          <div class="event">
+            <h3>Despedida Y Nuevo comienzo</h3>
+            <p>Estuvimos juntos hasta octubre del 2022, diría que nos dijimos adiós el 8 de Octubre.</p>
+            <p>Tú tomaste tu camino y yo el mió, hasta que el 17 de Noviembre de 2024, unos dias antes de tu cumpleaños me pediste que te hiciera una carta.</p>
+            <p>Recuerdo que me sorprendió mucho, pero acepté e hice la carta donde te explicaba como me sentía en ese momento.</p>
+            <p>Toda esta historia terminó conmigo escribiendote cartas durante toda una semana, me acuerdo perfectamente sobretodo de esa última carta, cuando la terminé de escribir, me invadió una sensación de tristeza y libertad.</p>
+            <p>Unas semanas depués nos dimos la oportunidad de volver a conocernos :')</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Juego de Preguntas y Respuestas -->
+      <section id="juego-san-valentin">
+        <h2>Chat conmigo </h2>
+        <div id="preguntas">
+          <p id="pregunta-texto"></p>
+          <input type="text" id="respuesta-input" placeholder="Escribe tu respuesta aquí">
+          <button id="siguiente-pregunta">Siguiente Pregunta</button>
+        </div>
+        <div id="resultado" style="display: none;">
+          <h3>¡Felicidades! Pregunta final (responde dos veces)</h3>
+          <p>¿Quieres ser mi San Valentín y novia?</p>
+          <button id="si-btn">¡Sí!</button>
+          <button id="no-btn">No</button>
+        </div>
+      </section>
+      
+      <!-- Animación de Corazones y Mensaje Especial (Oculto) -->
+      <section id="animacion-corazones" style="display: none;">
+        <div id="corazones-container"></div>
+        <div id="mensaje-especial">
+          <h2>¿Quieres ser mi San Valentín y novia?</h2>
+          <div id="botones-respuesta">
+            <button id="si-btn-final">¡Sí!</button>
+            <button id="no-btn-final">No</button>
+          </div>
+        </div>
+      </section>
+      
+
+      <!-- Photo Carousel Section -->
+      <section>
+  <h2>Galería de Fotos</h2>
+  <div class="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item"><img src="foto1.jpg" alt="Recuerdo 1"></div>
+      <div class="carousel-item"><img src="foto2.jpg" alt="Recuerdo 2"></div>
+      <div class="carousel-item"><img src="foto3.jpg" alt="Recuerdo 3"></div>
+      <!-- Agrega más imágenes aquí -->
+    </div>
+    <button class="carousel-prev">&#10094;</button>
+    <button class="carousel-next">&#10095;</button>
+  </div>
+</section>
+
+<!-- Sección de Videos de Besos (Oculta por defecto) -->
+<section id="video-besos" style="display: none; text-align: center;">
+  <h2>¡Besito! 😘</h2>
+  <div id="video-container">
+    <video id="video-mio" src="C:\Users\Gaming1\Desktop\UNIVERSIDAD\Thess\libro_recuerdos\VID-20250131-WA0026.mp4" autoplay loop muted></video>
+    <video id="video-suyo" src="C:\Users\Gaming1\Desktop\UNIVERSIDAD\Thess\libro_recuerdos\VID-20250131-WA0024.mp4" autoplay loop muted></video>
+  </div>
+</section>
+
+
+
+    </main>
+  </div>
+
+  <!-- Música -->
+  <audio id="musica" loop>
+    <source src="taym.mp3" type="audio/mp3">
+    Tu navegador no soporta el elemento de audio.
+  </audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
