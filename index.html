@@ -123,6 +123,49 @@
         </div>
       </section>
 
+      <section id="cartas">
+        <h2>💌 Nuestras Cartas 💌</h2>
+        <div class="cartas-container">
+          <div class="carta-pdf" onclick="verPDF('cartas/carta1.pdf')">
+            <img src="cartas/miniatura1.jpg" alt="Carta 1">
+            <p>Carta 1</p>
+          </div>
+          <div class="carta-pdf" onclick="verPDF('cartas/carta2.pdf')">
+            <img src="cartas/miniatura2.jpg" alt="Carta 2">
+            <p>Carta 2</p>
+          </div>
+          <div class="carta-pdf" onclick="verPDF('cartas/carta3.pdf')">
+            <img src="cartas/miniatura3.jpg" alt="Carta 3">
+            <p>Carta 3</p>
+          </div>
+          <div class="carta-pdf" onclick="verPDF('cartas/carta4.pdf')">
+            <img src="cartas/miniatura4.jpg" alt="Carta 4">
+            <p>Carta 4</p>
+          </div>
+          <div class="carta-pdf" onclick="verPDF('cartas/carta5.pdf')">
+            <img src="cartas/miniatura5.jpg" alt="Carta 5">
+            <p>Carta 5</p>
+          </div>
+          <div class="carta-pdf" onclick="verPDF('cartas/carta6.pdf')">
+            <img src="cartas/miniatura6.jpg" alt="Carta 6">
+            <p>Carta 6</p>
+          </div>
+          <div class="carta-pdf" onclick="verPDF('cartas/carta7.pdf')">
+            <img src="cartas/miniatura7.jpg" alt="Carta 7">
+            <p>Carta 7</p>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Visor de PDF Flotante -->
+      <div id="pdfViewer" class="pdf-viewer">
+        <div class="pdf-container">
+          <button class="cerrar" onclick="cerrarPDF()">×</button>
+          <iframe id="pdfFrame" src="" width="100%" height="500px"></iframe>
+        </div>
+      </div>
+      
+
       <!-- Juego de Preguntas y Respuestas -->
       <section id="juego-san-valentin">
         <h2>Chat conmigo </h2>

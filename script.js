@@ -206,3 +206,28 @@ document.getElementById('no-btn-final').addEventListener('click', function () {
     alert('¡Eres la mejor! ¡Feliz San Valentín, mi amor! 💖');
   });
 });
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const cartas = document.querySelectorAll(".carta-pdf");
+
+  // Agregar evento a cada carta
+  cartas.forEach((carta) => {
+      carta.addEventListener("click", () => {
+          const pdfUrl = carta.getAttribute("data-pdf");
+          verPDF(pdfUrl);
+      });
+  });
+});
+
+// Función para abrir el PDF
+function verPDF(pdfUrl) {
+  if (pdfUrl) {
+      console.log(`Abriendo PDF: ${pdfUrl}`);
+      window.open(pdfUrl, "_blank");
+  } else {
+      console.error("Error: No se encontró la URL del PDF");
+  }
+}
+
+
